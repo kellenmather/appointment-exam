@@ -1,0 +1,32 @@
+<div ng-controller="homeController">
+  <h3>Doctor's Appointments</h3>
+  <p>Welcome, {{user.name}} your id is: {{user._id}}</p>
+  <button ng-click="logout()" type="submit">Sign Out</button>
+   <div>
+      <h4>Table will go here:</h4>
+      Search: <input type="text" ng-model="s">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Patient Name</th>
+          <th>Complaint</th>
+          <th>Action</th>
+        </tr>
+        <tr ng-show="getApps.length < 1">
+          <td> - </td>
+          <td> - </td>
+          <td> - </td>
+          <td> - </td>
+          <td> - </td>
+        <tr ng-repeat="app in getApps | filter: s | orderBy:'date'" ng-if="validDate(app.date)">
+          <td>{{app.date | date : 'MM/dd/yyyy'}}</td>
+          <td>{{app.time}}</td>
+          <td>{{app.userName}}</td>
+          <td>{{app.complaint}}</td>
+          <td ng-show="user.name === app.userName"><button ng-click="cancel(app._id)">Cancel</button></td>
+        </tr>
+      </table>
+      <button><a href="/#/addapp">Add New Appointment</a></button>
+   </div>
+</div>

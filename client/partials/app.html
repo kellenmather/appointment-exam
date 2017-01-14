@@ -1,0 +1,25 @@
+<h3>New Appointment</h3>
+<div ng-if="errMessage">
+    <ul>
+        <li ng-repeat="err in errMessage">{{err}}</li>
+    </ul>
+</div>
+<form ng-submit="newapp()">
+    Date:<input type="date" ng-model="appointment.date">
+    Time:
+    <select ng-model="appointment.time">
+        <option value="8:00 AM">8:00 AM</option>
+        <option value="9:00 AM">9:00 AM</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="11:00 AM">11:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="3:00 PM">3:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+        <option value="5:00 PM">5:00 PM</option>
+    </select>
+    Complaint: <textarea ng-model="appointment.complaint"></textarea>
+    <input type="submit" value="Add Appointment">
+</form>
+<button><a href="/#/home">Cancel</a></button>

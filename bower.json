@@ -1,0 +1,23 @@
+{
+  "name": "assignment1",
+  "authors": [
+    "Philip Cron <pbentoncron@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "moment": "^2.16.0",
+    "angular-cookies": "^1.5.8"
+  }
+}
